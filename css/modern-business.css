@@ -43,9 +43,13 @@ margin : 30px;
 	display : inline-block;
 }
 
-#best-item{
-
-}
-#new-item{
-	
+.item-list{
+	text-align: center;
+	font-size:15px;
+	list-style: none;
+    /* margin: 0px;
+    padding: 0px;
+  
+    max-width: 250px;
+    width: 100%; */
 }

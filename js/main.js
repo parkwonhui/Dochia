@@ -30,32 +30,35 @@ $(function(){
 	
 	function successBestItemHandler(data){		
 		$(data).each(function(index, item){
-			var html = '<div class="col-lg-2 col-sm-6 portfolio-item">' 
+			var html = '<div class="col-lg-2 col-sm-6 portfolio-item">';
 			html += '<a href="#"><img class="card-img-top" src="./img/'+item.img+'" alt=""></a>';
-			html += '<ul>';
+			html += '<h3 class="item-list">';
 			html += '<li>'+item.comment+'</li>';
 			html += '<li>'+item.name+'</li>';
 			html += '<li>'+item.price+'</li>';
 			html += '<li> 장바구니 </li>';
 			html += '</ul>';
 			html += '</div>';
-			$('#best-item').append(html);
-			console.log();	
-            /*<a href="#"><img class="card-img-top" src="http://placehold.it/250x250" alt=""></a>
-            <ul>
-			<li>미니코멘트</li>
-            <li>아이템 이름</li>
-            <li>가격</li>
-            <li>장바구니</li>       
-            </ul>*/
+			
+			$('#best-item').append(html);	
+
+			//$('#best-item').append(html);	
 		});
+	//	$('ul').listview();
+		
+		//$(".item-mini-list").trigger("create");
+
+		//$('.card-img-top').page();
+		//$("body").html(html).trigger("create");
+		//$('li').html(html).trigger("create");
+		//$('#best-item').trigger();	// 동적 태그 생성 시 ui세팅
 	}
 	
 	function successNewItemHandler(data){		
 		$(data).each(function(index, item){
 			var html = '<div class="col-lg-2 col-sm-6 portfolio-item">';
 			html += '<a href="#"><img class="card-img-top" src="./img/'+item.img+'" alt=""></a>';
-			html += '<ul>';
+			html += '<ul class="item-list">';
 			html += '<li>'+item.comment+'</li>';
 			html += '<li>'+item.name+'</li>';
 			html += '<li>'+item.price+'</li>';
@@ -66,8 +69,6 @@ $(function(){
 		});
 	}
 			
-	postBestItem();
-	postNewItem();
 
 	var a = $best.children.length;
 	console.log('a:'+a);
@@ -117,4 +118,6 @@ $(function(){
 		}
 	});*/
 	
+	postBestItem();
+	postNewItem();
 });
