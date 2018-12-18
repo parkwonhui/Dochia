@@ -27,3 +27,25 @@ body {
 .portfolio-item {
   margin-bottom: 30px;
 }
+
+.item-center{
+text-align: center;
+margin : 20%;
+}
+
+.item-center-text{
+text-align: center;
+margin : 30px;
+}
+
+.item-image{
+	float : 'left';
+	display : inline-block;
+}
+
+#best-item{
+
+}
+#new-item{
+	
+}
