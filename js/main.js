@@ -31,38 +31,28 @@ $(function(){
 	function successBestItemHandler(data){		
 		$(data).each(function(index, item){
 			var html = '<div class="col-lg-3 col-sm-6 portfolio-item">';
-			html += '<a href="#"><img class="card-img-top" src="./img/'+item.img+'" alt=""></a>';
+			html += '<a href="#"><img class="card-img-top rounded " src="./img/'+item.img+'" alt=""></a>';
 			html += '<h3 class="item-list">';
-			html += '<li>'+item.comment+'</li>';
-			html += '<li>'+item.name+'</li>';
+			html += '<li class="item-explanation">'+item.comment+'</li>';
+			html += '<li class="item-name">'+item.name+'</li>';
 			html += '<li>'+item.price+'</li>';
-			html += '<li> 장바구니 </li>';
+			html += '<li> <button type="button" class="btn btn-light">장바구니</button></li>';
 			html += '</ul>';
 			html += '</div>';
-			
 			$('#best-item').append(html);	
 
-			//$('#best-item').append(html);	
 		});
-	//	$('ul').listview();
-		
-		//$(".item-mini-list").trigger("create");
-
-		//$('.card-img-top').page();
-		//$("body").html(html).trigger("create");
-		//$('li').html(html).trigger("create");
-		//$('#best-item').trigger();	// 동적 태그 생성 시 ui세팅
 	}
 	
 	function successNewItemHandler(data){		
 		$(data).each(function(index, item){
 			var html = '<div class="col-lg-3 col-sm-6 portfolio-item">';
-			html += '<a href="#"><img class="card-img-top" src="./img/'+item.img+'" alt=""></a>';
+			html += '<a href="#"><img class="card-img-top rounded" src="./img/'+item.img+'" alt=""></a>';
 			html += '<ul class="item-list">';
-			html += '<li>'+item.comment+'</li>';
-			html += '<li>'+item.name+'</li>';
-			html += '<li>'+item.price+'</li>';
-			html += '<li> 장바구니 </li>';
+			html += '<li class="item-explanation">'+item.comment+'</li>';
+			html += '<li class="item-name">'+item.name+'</li>';
+			html += '<li >'+item.price+'</li>';
+			html += '<li> <button type="button" class="btn btn-light">장바구니</button> </li>';
 			html += '</ul>';
 			html += '</div>';
 			$('#new-item').append(html);
@@ -120,4 +110,14 @@ $(function(){
 	
 	postBestItem();
 	postNewItem();
+	
+	function hover(obj) {
+		console.log('aaaaa');
+		obj.style.opacity = "0.5";
+	}
+
+	function unhover(obj) {
+		console.log('bbbbb');
+		obj.style.opacity = "1.0";
+	}
 });
