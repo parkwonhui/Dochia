@@ -30,7 +30,7 @@ $(function(){
 	
 	function successBestItemHandler(data){		
 		$(data).each(function(index, item){
-			var html = '<div class="col-lg-2 col-sm-6 portfolio-item">';
+			var html = '<div class="col-lg-3 col-sm-6 portfolio-item">';
 			html += '<a href="#"><img class="card-img-top" src="./img/'+item.img+'" alt=""></a>';
 			html += '<h3 class="item-list">';
 			html += '<li>'+item.comment+'</li>';
@@ -56,7 +56,7 @@ $(function(){
 	
 	function successNewItemHandler(data){		
 		$(data).each(function(index, item){
-			var html = '<div class="col-lg-2 col-sm-6 portfolio-item">';
+			var html = '<div class="col-lg-3 col-sm-6 portfolio-item">';
 			html += '<a href="#"><img class="card-img-top" src="./img/'+item.img+'" alt=""></a>';
 			html += '<ul class="item-list">';
 			html += '<li>'+item.comment+'</li>';

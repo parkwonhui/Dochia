@@ -53,3 +53,21 @@ margin : 30px;
     max-width: 250px;
     width: 100%; */
 }
+
+.top-item-top-menu{
+	list-style: none;
+	width:40%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	float:right;
+}
+
+
+.top-item-top-menu li{
+	display:inline;
+	float: left;
+	font-size:15px;
+	text-align: right;
+	margin-left: 2%;
+	margin-right: 2%;
+}
