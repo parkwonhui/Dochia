@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		var links = document.getElementsByTagName('a')
+		
+		for(var i =0; i<links.length; i++){
+			links[i].onclick = function(){
+				 window.opener.Addr.value = this.innerHTML;			 
+				 self.close();  
+			}
+		}
+	}
+
+</script>
+</head>
+<body>
+		<li><a href = "#">서울시 금천구 가마산로</a></li>
+		<li><a href = "#">서울시 금천구 가산디지털1로</a></li>
+		<li><a href = "#">서울시 금천구 가산디지털2로</a></li>
+		<li><a href = "#">서울시 금천구 가산로</a></li>
+		<li><a href = "#">서울시 금천구 가산로3가길</a></li>
+		<li><a href = "#">서울시 금천구 가산로3길</a></li>
+		<li><a href = "#">서울시 금천구 가산로5길</a></li>
+		<li><a href = "#">서울시 금천구 가산로7길</a></li>
+		<li><a href = "#">서울시 금천구 가산로9길</a></li>
+		
+</body>
+</html>

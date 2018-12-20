@@ -1,38 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-  <head>
+<title>Modern Business - Start Bootstrap Template</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>도치야</title>
+<!-- Custom styles for this template -->
+<link href="css/modern-business.css" rel="stylesheet">
+    
+<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    
+    
+<script type="text/javascript">
+    $(function(){
+    	$('#orderCheck').click(function () {
+    		var name = document.getElementById('lg').value;
+			var no = document.getElementById('sm').value;
+    		
+    		$.ajax({
+    			url: 'search.json',
+    			type: 'get',
+    			datatype: 'json',
+    			success: function (data) {
+    				//$('#data').empty();    
+    				$.each(data, function(index, item) {
+    					var name2 = item.Name;
+    					var no2 = item.No;
+    					
+    			
+    					if(name == name2 && no == no2 ) {
+    						var html = '<div>'
+        					html += '<h3 class="Name">' + item.Name  + '</h3>';
+        					html += '<div class="No">' + item.No  + '</div>';
+        					html += '</div>';
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    					}else{
+        					document.getElementById('data').innerHTML = "주문건이 없습니다.";
+    						}
+ 
+    					
+    					$('#data').append(html);
 
-    <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    					});		
+    				}
+    			});
+    		return false;
+    		});   	
+    });
+</script>
 
-  </head>
 
-  <body>
+<!-- 				
+ -->
 
-    <!-- Navigation -->
+
+</head>
+<body>
+
+        <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="index.html">도치야</a>
       <div class="container">
+        <a class="navbar-brand" href="index.html"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="about.html">도치야</a>
             </li>
-            <!--
+            <!-- 
             <li class="nav-item">
               <a class="nav-link" href="services.html">Services</a>
             </li>
@@ -41,10 +85,10 @@
             </li>-->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                추천!세트상품
+                	추천!세트상품
               </a>
-             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=228">SET 상품</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a id="set-item" class="dropdown-item" href="./setitem.html">SET 상품</a>
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=163">하우스</a>
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=164">은신처/포치</a>
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=165">화장실</a>
@@ -54,9 +98,9 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               고슴도치 분양
+                	고슴도치 분양
               </a>
-             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=169">사료</a>
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=170">간식</a>
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=171">밀웜(곤충류)</a>
@@ -67,9 +111,9 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               		 고슴도치 교배/호텔
+               	고슴도치 교배/호텔
               </a>
-             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=176">이동장</a>
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=177">쳇바퀴/장난감</a>
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=178">계절용품</a>
@@ -77,13 +121,13 @@
                 <a class="dropdown-item" href="http://www.dochiya.co.kr/front/php/category.php?cate_no=180">햄스터 용품</a>
               </div>
             </li>
-     		<li class="nav-item">
+             <li class="nav-item">
               <a class="nav-link" href="login.html">로그인</a>
             </li>
              <li class="nav-item">
               <a class="nav-link" href="join.html">회원가입</a>
             </li>
-              <li class="nav-item">
+             <li class="nav-item">
               <a class="nav-link" href="cart.html">장바구니</a>
             </li>
              <li class="nav-item">
@@ -97,36 +141,46 @@
       </div>
     </nav>
 
-    <!-- Page Content -->
-    <div class="container">
-
-      <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3 .item-center-text">도치야 
-        <small>매장안내</small>
-      </h1>
-
-      <!-- Our Customers -->
-      <div id="about-polaroid">
-
-          <img id="about-container" class="img-fluid" src="./img/right_gogak.gif" alt="">
+   <!--container-->
+<div class="container ">
+  <h2 class='item-center-text-ex'>비회원 주문조회</h2>
+   <div class='item-center-text'>비회원의 주문조회 창입니다</div>
+  <form class="form-horizontal item-center-text-ex" name = "guestCheck">
+    <div class="form-group form-group-lg ">
+      <label class="col-sm-3 control-label" for="lg">주문자명</label>
+      <div class="col-sm-5 search-form">
+        <input class="form-control " type="text" id="lg" name="guestName">
       </div>
-      <!-- /.row -->
-
     </div>
-    <!-- /.container -->
+    <div class="form-group form-group-sm">
+      <label class="col-sm-3 control-label" for="sm">주문번호</label>
+      <div class="col-sm-5 search-form">
+        <input class="form-control" type="text" id="sm" name="guestNo">
+      </div>
+    </div>
+    <input type="submit" id="orderCheck" class="btn btn-info search-form" value="조회">
+  </form>
+  
+   
+</div>
 
+<div>
+	<div id="data">
+</div>
+	</div>
+	<!--/.container-->
+	 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">COMPANY : 도치야  서울시 관악구 은천로 182-1 (봉천동 42-55 1층) Copyright &copy;</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
       </div>
       <!-- /.container -->
     </footer>
-    
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/main.js"></script>
 
   </body>
 
